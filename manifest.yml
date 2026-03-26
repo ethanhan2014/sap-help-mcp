@@ -1,0 +1,9 @@
+applications:
+  - name: sap-help-mcp
+    memory: 256M
+    disk_quota: 512M
+    buildpacks:
+      - nodejs_buildpack
+    command: node dist/server.js
+    health-check-type: http
+    health-check-http-endpoint: /
