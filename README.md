@@ -33,6 +33,35 @@ Add to your Claude Code MCP config (`.claude.json`):
 }
 ```
 
+## Deploy to SAP BTP Cloud Foundry
+
+```bash
+npm run build
+cf push
+```
+
+The app deploys using `manifest.yml` and starts the HTTP transport on the CF-assigned port.
+
+### Connect to deployed server
+
+```json
+{
+  "mcpServers": {
+    "sap-help": {
+      "type": "url",
+      "url": "https://<your-cf-app-url>/mcp"
+    }
+  }
+}
+```
+
+### Run HTTP server locally
+
+```bash
+npm run build
+npm run start:http    # starts on port 8080
+```
+
 ## Examples
 
 **Keyword search:**
