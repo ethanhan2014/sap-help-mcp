@@ -53,3 +53,37 @@ export interface SearchOptions {
   state?: string;
   maxResults?: number;
 }
+
+export interface DeliverableMetadataResponse {
+  status: string;
+  data: {
+    deliverable: {
+      id: number;
+      build?: number;
+      buildNo?: number;
+      versionName: string;
+      version: string;
+      product: string;
+      productName: string;
+      language: string;
+    };
+    deliverableLoio: string;
+    topicLoio: string;
+    filePath: string;
+  };
+}
+
+export interface PageContentResponse {
+  status: string;
+  data: {
+    currentPage: {
+      id: number;
+      t: string;
+      u: string;
+      loio: string;
+    };
+    body: string;
+    isMachineTranslated: number;
+    githubLink: string;
+  };
+}
